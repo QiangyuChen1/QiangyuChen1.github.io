@@ -1,0 +1,85 @@
+import type { TimelineEntry } from "./types.ts";
+import { agilexMark, cityuMark, mmlabMark, paramiMark, stellaMark, szuMark, xsparkMark } from "./figures.ts";
+
+/** Direction line for the Engineering intro. No items, no tools. */
+export const engineeringNext = "Next: taking learned policies from simulation onto physical arms and hands end to end.";
+
+/** Rendered newest first within each kind (see lib/format.ts `byRecency`). */
+export const timeline: TimelineEntry[] = [
+  {
+    id: "tl-xspark",
+    kind: "role",
+    org: "Xspark AI",
+    title: "Real-Robot Delivery & Business Unit · Shenzhen",
+    dates: { start: "2026.06", end: "present" },
+    oneLiner: "Real-robot delivery at a company building a real-world database for embodied AI.",
+    outcome: "X-Dec, a computer vision project",
+    mark: xsparkMark,
+    evidence: ["EXP-XSPARK"],
+  },
+  {
+    id: "tl-mmhand",
+    kind: "role",
+    org: "Shenzhen Hetao Institute × HKU MMLab",
+    title: "Design Consultant",
+    dates: { start: "2025.08", end: "2026.05" },
+    oneLiner: "Mechanical design concepts, embedded debugging, control and state-machine design.",
+    outcome: "MM-Hand 1.0",
+    mark: mmlabMark,
+    evidence: ["EXP-MMHAND"],
+  },
+  {
+    id: "tl-parami",
+    kind: "role",
+    org: "Parami AI (HK)",
+    title: "Development Intern & Teaching Assistant",
+    dates: { start: "2025.09", end: "2026.04" },
+    oneLiner: "Technical lead for the LeRobot single- and dual-arm HKAGE course.",
+    mark: paramiMark,
+    evidence: ["EXP-PARAMI"],
+  },
+  {
+    id: "tl-xjgn",
+    kind: "role",
+    org: "Stella-Robot",
+    title: "R&D Intern",
+    dates: { start: "2024.09", end: "2025.01" },
+    oneLiner: "Embedded control framework, control algorithms, and demo algorithms for an early-generation dexterous hand.",
+    mark: stellaMark,
+    evidence: ["EXP-XJGN"],
+  },
+  {
+    id: "tl-agilex",
+    kind: "role",
+    org: "AgileX Robotics",
+    title: "Assistant Development Engineer, R&D",
+    dates: { start: "2024.08", end: "2024.09" },
+    oneLiner: "ROS2-based driverless car in a training competition; assisted with parts of RoboTwin 1.0.",
+    outcome: "Ranked 1st of 8 teams",
+    mark: agilexMark,
+    evidence: ["EXP-AGILEX"],
+  },
+  {
+    id: "tl-cityu",
+    kind: "education",
+    org: "City University of Hong Kong",
+    title: "M.Sc. Data Science",
+    dates: { inProgress: true },
+    oneLiner: "Coursework in Dynamic Programming & Reinforcement Learning, and Embodied AI & Applications.",
+    outcome: "Outstanding Research Project Award 2026",
+    place: "Hong Kong",
+    mark: cityuMark,
+    evidence: ["EDU-CITYU", "EDU-CITYU-AWD"],
+  },
+  {
+    id: "tl-szu",
+    kind: "education",
+    org: "Shenzhen University",
+    title: "B.Eng. Computer Science and Technology",
+    dates: { start: "2021.09", end: "2025.06" },
+    oneLiner: "Coursework in Microprocessors & Robotics and Computer Vision.",
+    place: "Shenzhen",
+    mark: szuMark,
+    evidence: ["EDU-SZU"],
+  },
+];
