@@ -1,0 +1,299 @@
+@import "tailwindcss";
+
+/* ---------- Tokens: VISUAL_IDENTITY.md §3 ---------- */
+:root {
+  --bg: #fafaf8;
+  --bg-elevated: #ffffff;
+  --bg-subtle: #f2f2ef;
+  --text: #0b0b0c;
+  --text-secondary: #3a3a3d;
+  --text-muted: #6e6e73;
+  --text-faint: #a1a1a6;
+  --border: #e4e4e0;
+  --border-strong: #cfcfca;
+  --accent: #2b59c3;
+  --accent-hover: #1f46a0;
+  --accent-muted: #e9eef9;
+  --focus-ring: #2b59c3;
+  --card-shadow-hover: 0 1px 2px rgba(11, 11, 12, 0.04), 0 8px 24px rgba(11, 11, 12, 0.06);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 150ms;
+  --dur-hover: 200ms;
+  --dur-base: 400ms;
+  --dur-reveal: 700ms;
+  --dur-media: 900ms;
+  --dur-draw: 1600ms;
+
+  --nav-h: 56px;
+  color-scheme: light;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --nav-h: 64px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0a0b;
+    --bg-elevated: #111113;
+    --bg-subtle: #161618;
+    --text: #f5f5f4;
+    --text-secondary: #c7c7cc;
+    --text-muted: #8e8e93;
+    --text-faint: #5a5a5f;
+    --border: #232326;
+    --border-strong: #34343a;
+    --accent: #7c9cf0;
+    --accent-hover: #a3bbf5;
+    --accent-muted: #16203a;
+    --focus-ring: #7c9cf0;
+    --card-shadow-hover: none;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-elevated: var(--bg-elevated);
+  --color-subtle: var(--bg-subtle);
+  --color-ink: var(--text);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-muted: var(--accent-muted);
+
+  --font-display: var(--font-geist), "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ---------- Type scale: fluid 375 → 1440 (§2) ---------- */
+@utility text-display {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 2.12rem + 3.756vw, 5.5rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+@utility text-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 1.972rem + 2.254vw, 4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+@utility text-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.736rem + 1.127vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+@utility text-h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 1.243rem + 0.563vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+@utility text-h4 {
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 1.081rem + 0.188vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+@utility text-lead {
+  font-size: clamp(1.125rem, 1.059rem + 0.282vw, 1.3125rem);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+}
+@utility text-body {
+  font-size: clamp(1rem, 0.978rem + 0.094vw, 1.0625rem);
+  line-height: 1.65;
+}
+@utility text-body-sm {
+  font-size: clamp(0.875rem, 0.853rem + 0.094vw, 0.9375rem);
+  line-height: 1.55;
+}
+@utility text-caption {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  letter-spacing: 0.005em;
+}
+@utility text-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+@utility text-mono-sm {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent-muted);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+section[id],
+article[id] {
+  scroll-margin-top: calc(var(--nav-h) + 16px);
+}
+
+/* Underline that grows from the left (§5 hover). */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition:
+    background-size var(--dur-hover) var(--ease-out),
+    color var(--dur-micro) var(--ease-out);
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Card hover (§4): pointer devices only. */
+.card-hover {
+  transition:
+    transform var(--dur-hover) var(--ease-out),
+    border-color var(--dur-hover) var(--ease-out),
+    box-shadow var(--dur-hover) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card-hover:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-strong);
+    box-shadow: var(--card-shadow-hover);
+  }
+  .card-hover:hover .card-media {
+    transform: scale(1.02);
+  }
+}
+.card-media {
+  transition: transform var(--dur-media) var(--ease-out);
+}
+
+/* ---------- First load: hero only (§5) ---------- */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-in {
+  animation: rise-in var(--dur-reveal) var(--ease-out) both;
+  animation-delay: calc(100ms + var(--i, 0) * 80ms);
+}
+
+/* Hero diagram line draw: strokes carry pathLength="1". */
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw var(--dur-draw) var(--ease-in-out) forwards;
+  animation-delay: var(--d, 200ms);
+}
+.draw-fade {
+  opacity: 0;
+  animation: fade-in var(--dur-media) var(--ease-in-out) forwards;
+  animation-delay: var(--d, 200ms);
+}
+
+/* Faint graph paper behind the hero diagram, masked at the edges. */
+.graph-paper {
+  background-image:
+    linear-gradient(to right, var(--text) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--text) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.035;
+  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 75%);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-in {
+    animation: fade-in 150ms linear both;
+  }
+  .draw,
+  .draw-fade {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  .card-hover,
+  .card-media,
+  .link-underline {
+    transition-duration: 1ms;
+  }
+  .card-hover:hover,
+  .card-hover:hover .card-media {
+    transform: none !important;
+  }
+  [data-reveal] {
+    transform: none !important;
+  }
+}
