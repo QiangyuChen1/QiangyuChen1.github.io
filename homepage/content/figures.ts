@@ -34,7 +34,7 @@ export const caproIntro: MediaRef = {
   src: "/figures/capro-intro.jpg",
   alt: "CaPro pipeline for adapting a segmentation model to thin curvilinear structures from one unlabeled image.",
   width: 1338,
-  height: 749,
+  height: 842,
   credit: "Figure from the CaPro repository, xmed-lab/CaPro",
   href: "https://github.com/xmed-lab/CaPro",
 };
@@ -43,7 +43,7 @@ export const aiclReliability: MediaRef = {
   src: "/figures/aicl-reliability.png",
   alt: "Reliability diagrams for crack recognition on SDNET2018 without and with AICL; with AICL, accuracy tracks confidence closely.",
   width: 1005,
-  height: 452,
+  height: 632,
   credit: "Figure 4 of the AICL paper, AAAI 2025",
   href: "https://ojs.aaai.org/index.php/AAAI/article/view/33755",
 };
@@ -80,19 +80,10 @@ export const g3flowSpatialAlignment: MediaRef = {
 export const robotwinRealWorld: MediaRef = {
   src: "/figures/robotwin-real-world.jpg",
   alt: "RoboTwin 2.0 real-world evaluation: a dual-arm robot and a bottle on seen and unseen table backgrounds, with and without clutter.",
-  width: 656,
+  width: 966,
   height: 608,
   credit: "Fig. 10 · RoboTwin 2.0",
   href: "https://arxiv.org/abs/2506.18088",
-};
-
-export const marsCertificate: MediaRef = {
-  src: "/figures/neurips25-mars-thumb.jpg",
-  alt: "Certificate of the NeurIPS 2025 SpaVLE Workshop Control Track Champion, awarded to MMLab@HKU×D-Robotics for the Multi-Agent Embodied Intelligence Challenge.",
-  width: 360,
-  height: 254,
-  credit: "NeurIPS 2025 SpaVLE",
-  href: "/figures/neurips25-mars.pdf",
 };
 
 export const irosCertificate: MediaRef = {
