@@ -83,6 +83,10 @@ export interface ContactChannels {
   scholar?: LinkRef;
   linkedin?: LinkRef;
   x?: LinkRef;
+  /** Opens the supplied QR image. */
+  wechat?: LinkRef;
+  /** Opens the supplied QR image. Xiaohongshu / Rednote. */
+  rednote?: LinkRef;
 }
 
 export interface Profile {

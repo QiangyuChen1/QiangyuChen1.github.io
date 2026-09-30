@@ -30,9 +30,11 @@ export const profile: Profile = {
   ],
   contact: {
     intro:
-      "Interested in robot learning, dexterous manipulation, or simulation for embodied AI? I’m glad to talk about research collaboration.",
+      "Glad to talk about the infrastructure a physical robot runs on, and about getting systems onto real hardware.",
     email: "qiangyuchen516@gmail.com",
     allowPersonalEmail: true,
+    wechat: { kind: "other", label: "WeChat", href: "/contact/wechat.jpg" },
+    rednote: { kind: "other", label: "Rednote", href: "/contact/rednote.jpg" },
   },
   seo: {
     title: "Qiangyu Chen（陈锵宇）, Embodied AI Researcher",

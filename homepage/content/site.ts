@@ -38,7 +38,7 @@ export const sections = {
   },
   contact: {
     eyebrow: "Contact",
-    title: "Open to research collaboration.",
+    title: "Real-Robot Infra and Real-Robot Deployment.",
   },
 } satisfies Record<string, SectionCopy>;
 

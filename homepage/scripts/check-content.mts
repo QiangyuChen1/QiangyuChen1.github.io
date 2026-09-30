@@ -25,7 +25,12 @@ function checkEvidence(where: string, ids: string[]) {
 
 function checkLinks(where: string, links: { href: string }[]) {
   for (const l of links) {
-    if (!/^(https:\/\/|mailto:)/.test(l.href)) fail(`${where}: link "${l.href}" is not an absolute https/mailto URL`);
+    if (/^(https:\/\/|mailto:)/.test(l.href)) continue;
+    if (l.href.startsWith("/")) {
+      checkLocalFile(where, l.href);
+      continue;
+    }
+    fail(`${where}: link "${l.href}" is not an absolute https/mailto URL or a file under public/`);
   }
 }
 
@@ -94,7 +99,7 @@ if (community.relatedTeaching) checkEvidence("community/teaching", community.rel
 const c = profile.contact;
 if (c.email && /gmail\.com$/i.test(c.email) && !c.allowPersonalEmail)
   fail("contact: personal Gmail must not be published without allowPersonalEmail");
-checkLinks("contact", [c.github, c.scholar, c.linkedin, c.x].filter((l) => l !== undefined));
+checkLinks("contact", [c.github, c.scholar, c.linkedin, c.x, c.wechat, c.rednote].filter((l) => l !== undefined));
 const personalOnly = c.email && /gmail\.com$/i.test(c.email) && !c.allowPersonalEmail;
 if ((!c.email || personalOnly) && !c.github && !c.scholar && !c.linkedin && !c.x)
   warnings.push(
