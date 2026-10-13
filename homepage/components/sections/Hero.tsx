@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/Links";
 import { HeroCanvas } from "@/components/visuals/HeroCanvas";
 
 interface HeroProps {
-  profile: Pick<Profile, "publicName" | "role" | "eyebrow" | "statement" | "affiliationLine" | "signals">;
+  profile: Pick<Profile, "publicName" | "eyebrow" | "statement" | "affiliationLine" | "signals">;
   actions: Array<{ label: string; href: string }>;
 }
 
@@ -66,14 +66,11 @@ export function Hero({ profile, actions }: HeroProps) {
               />
               <NameLockup name={profile.publicName} />
             </div>
-            <p className="hero-in mt-4 text-[14.5px] leading-[1.3] font-medium tracking-[-0.015em] text-ink" style={step(2)}>
-              {profile.role}
-            </p>
-            <p className="hero-in mt-4 max-w-[66ch] text-[14px] leading-[1.65] text-secondary" style={step(3)}>
+            <p className="hero-in mt-4 max-w-[66ch] text-[14px] leading-[1.65] text-secondary" style={step(2)}>
               {profile.statement}
             </p>
 
-            <div className="hero-in mt-5" style={step(4)}>
+            <div className="hero-in mt-5" style={step(3)}>
               <h2 className="sr-only">Selected results</h2>
               <ul className="space-y-2 border-l border-line-strong pl-4">
                 {profile.signals.map((s) => (
@@ -91,7 +88,7 @@ export function Hero({ profile, actions }: HeroProps) {
               </ul>
             </div>
 
-            <div className="hero-in mt-6 flex flex-wrap items-center gap-x-6 gap-y-3" style={step(5)}>
+            <div className="hero-in mt-6 flex flex-wrap items-center gap-x-6 gap-y-3" style={step(4)}>
               {primary && <ButtonLink href={primary.href}>{primary.label}</ButtonLink>}
               {secondary.map((a) => (
                 <ButtonLink key={a.href} href={a.href} variant="text">
@@ -100,7 +97,7 @@ export function Hero({ profile, actions }: HeroProps) {
               ))}
             </div>
             {profile.affiliationLine && (
-              <p className="hero-in text-caption mt-5 text-muted" style={step(5)}>
+              <p className="hero-in text-caption mt-5 text-muted" style={step(4)}>
                 {profile.affiliationLine}
               </p>
             )}

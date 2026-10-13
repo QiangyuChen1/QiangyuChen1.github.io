@@ -16,10 +16,8 @@ const qrIcon: Record<string, string> = {
   Rednote: "/icons/xiaohongshu.svg",
 };
 
-const channelEmoji: Record<string, string> = {
+const channelEmoji = {
   Email: "📧",
-  WeChat: "💬",
-  Rednote: "📕",
 };
 
 /** Rendered only when at least one approved channel exists (see app/page.tsx). */
@@ -68,12 +66,7 @@ export function ContactSection({ copy, contact }: ContactSectionProps) {
                     <Image src={qrIcon[item.label]} alt="" width={28} height={28} className="size-7 shrink-0" />
                   )}
                   <span className="min-w-0">
-                    <span className="block font-medium text-ink">
-                      <span aria-hidden="true" className="mr-1.5">
-                        {channelEmoji[item.label]}
-                      </span>
-                      {item.label}
-                    </span>
+                    <span className="block font-medium text-ink">{item.label}</span>
                     <span className="text-caption text-muted">QR code</span>
                   </span>
                 </a>

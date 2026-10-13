@@ -166,10 +166,17 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* One composited wallpaper. Fixed so scrolling the page does not repaint the covers. */
+/* One composited wallpaper. Fixed so scrolling the page does not repaint the covers.
+   Height is the large viewport, not the visual one: on a phone the URL bar
+   collapsing must not scale the covers. */
 .album-field {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
+  max-height: 100lvh;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;

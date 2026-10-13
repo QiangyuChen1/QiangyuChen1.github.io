@@ -37,7 +37,7 @@ export const profile: Profile = {
     rednote: { kind: "other", label: "Rednote", href: "/contact/rednote.jpg" },
   },
   seo: {
-    title: "Qiangyu Chen（陈锵宇）, Embodied AI Researcher",
+    title: "Qiangyu Chen（陈锵宇）",
     description:
       "Embodied AI researcher working on robot learning, dexterous manipulation, and simulation data generation for sim-to-real transfer.",
     canonical: "https://qiangyuchen1.github.io/",
