@@ -4,13 +4,13 @@ import { g3flowSpatialAlignment, mmhandStructure, robotwinRealWorld } from "./fi
 export const workDirections: WorkDirection[] = [
   {
     id: "real-robot-infra",
-    title: "Real-Robot Infra",
+    title: "Infra",
     summary:
-      "The hardware and software a physical robot runs on: dexterous-hand mechanisms, embedded control and state machines, ROS2 systems, and the single- and dual-arm LeRobot setups behind the course I led.",
+      "Infrastructure for robot learning: XPolicyLab, a shared standard for evaluating and deploying policies, plus dexterous-hand mechanisms, embedded control and state machines, ROS2 systems, and the LeRobot setups behind the course I led.",
     media: mmhandStructure,
-    relatedProjects: ["proj-mmhand"],
+    relatedProjects: ["proj-xpolicylab", "proj-mmhand"],
     signals: ["HKU MMLab", "Stella-Robot"],
-    evidence: ["EXP-MMHAND", "EXP-XJGN", "EXP-AGILEX", "EXP-PARAMI"],
+    evidence: ["PUB-XPOLICYLAB", "EXP-MMHAND", "EXP-XJGN", "EXP-AGILEX", "EXP-PARAMI"],
     order: 1,
   },
   {

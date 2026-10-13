@@ -20,6 +20,25 @@ export const g3flowTeaser: MediaRef = {
   href: "https://arxiv.org/abs/2411.18369",
 };
 
+/** Overview image from the XPolicyLab repository, padded with white to the RoboTwin teaser's ratio. */
+export const xpolicyLabTeaser: MediaRef = {
+  src: "/figures/xpolicylab-teaser.jpg",
+  alt: "XPolicyLab overview: the name over a field of policy marks, with the line Standard and Infra for Policy Evaluation and Deployment.",
+  width: 1400,
+  height: 881,
+  credit: "Overview · XPolicyLab",
+  href: "https://xpolicylab.github.io/",
+};
+
+export const xpolicyLabCertificate: MediaRef = {
+  src: "/figures/iros26-xpolicylab-thumb.jpg",
+  alt: "Certificate of the IROS 2026 Best Tool Paper at the Building Scalable Infrastructure for Robot Learning Workshop, awarded to all XPolicyLab contributors.",
+  width: 360,
+  height: 257,
+  credit: "IROS 2026 Best Tool Paper",
+  href: "/figures/iros26-xpolicylab.jpg",
+};
+
 /** The Control Track certificate, padded with white to the RoboTwin teaser's ratio. */
 export const marsCertificateCover: MediaRef = {
   src: "/figures/neurips25-mars-cover.jpg",

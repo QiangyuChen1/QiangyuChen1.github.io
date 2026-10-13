@@ -7,12 +7,15 @@ import { hasContactChannels } from "@/lib/contact";
 import { Navbar } from "@/components/layout/Navbar";
 import { SkipLink } from "@/components/ui/SkipLink";
 import { MotionProvider } from "@/components/ui/MotionProvider";
+import { EndEffector } from "@/components/visuals/EndEffector";
+import { AlbumField } from "@/components/visuals/AlbumField";
 import "./globals.css";
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  // 300 only styled the Chinese name, and those glyphs are not in this latin cut.
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -71,22 +74,26 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <html lang="en" data-scroll-behavior="smooth" className={`${outfit.variable} antialiased`}>
       <head>
         <noscript>
-          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}.album-field img{opacity:1!important}`}</style>
         </noscript>
       </head>
       <body className="min-h-screen bg-bg text-ink">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }}
-        />
-        <MotionProvider>
-          <SkipLink />
-          <Navbar
-            brand={profile.publicName}
-            items={navItems.filter((n) => n.id !== "contact" || hasContactChannels(profile.contact))}
+        <AlbumField />
+        <div className="relative z-10">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }}
           />
-          {children}
-        </MotionProvider>
+          <MotionProvider>
+            <EndEffector />
+            <SkipLink />
+            <Navbar
+              brand={profile.publicName}
+              items={navItems.filter((n) => n.id !== "contact" || hasContactChannels(profile.contact))}
+            />
+            {children}
+          </MotionProvider>
+        </div>
       </body>
     </html>
   );

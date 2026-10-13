@@ -13,7 +13,7 @@ interface FooterProps {
 export function Footer({ name, updated, place, affiliation, links }: FooterProps) {
   const parts = [affiliation, place].filter((p): p is string => Boolean(p));
   return (
-    <footer className="border-t border-line">
+    <footer className="border-t border-line bg-bg">
       <Container className="flex flex-col gap-6 pt-10 pb-[max(2.5rem,var(--safe-bottom))] lg:flex-row lg:items-center lg:justify-between">
         <p className="text-caption flex flex-wrap gap-x-2 text-muted">
           <span className="whitespace-nowrap">© 2026 {name}</span>

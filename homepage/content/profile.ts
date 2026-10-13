@@ -21,7 +21,7 @@ export const profile: Profile = {
     { work: "MARS Challenge @ NeurIPS 2025", detail: "Control Track Champion", href: "#proj-mars", evidence: ["CHL-MARS"] },
   ],
   interests: [
-    "Real-Robot Infra",
+    "Infra",
     "Computer Vision",
     "Real-Robot Deployment",
     "Dexterous Manipulation",
@@ -30,7 +30,7 @@ export const profile: Profile = {
   ],
   contact: {
     intro:
-      "Glad to talk about the infrastructure a physical robot runs on, and about getting systems onto real hardware.",
+      "Glad to talk about infrastructure for robot learning, and about getting systems onto real hardware.",
     email: "qiangyuchen516@gmail.com",
     allowPersonalEmail: true,
     wechat: { kind: "other", label: "WeChat", href: "/contact/wechat.jpg" },

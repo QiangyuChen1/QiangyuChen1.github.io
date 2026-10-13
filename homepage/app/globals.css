@@ -166,6 +166,73 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* One composited wallpaper. Fixed so scrolling the page does not repaint the covers. */
+.album-field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: paint;
+}
+.album-field img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 480ms var(--ease-out);
+}
+.album-field img.is-in {
+  opacity: 1;
+}
+
+/* The gripper is the cursor. Touch keeps the system pointer. */
+html[data-gripper],
+html[data-gripper] * {
+  cursor: none !important;
+}
+.end-effector {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  color: var(--text);
+  opacity: 0;
+  pointer-events: none;
+}
+.end-effector[data-on] {
+  opacity: 1;
+}
+@media (hover: none), (pointer: coarse) {
+  .end-effector {
+    display: none;
+  }
+}
+.album-field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 58% 54% at 46% 40%,
+    color-mix(in srgb, var(--bg) 96%, transparent) 0%,
+    color-mix(in srgb, var(--bg) 86%, transparent) 50%,
+    color-mix(in srgb, var(--bg) 48%, transparent) 100%
+  );
+}
+@media (max-width: 1023px) {
+  .album-field::after {
+    background: radial-gradient(
+      ellipse 52% 68% at 50% 40%,
+      color-mix(in srgb, var(--bg) 94%, transparent) 0%,
+      color-mix(in srgb, var(--bg) 84%, transparent) 48%,
+      color-mix(in srgb, var(--bg) 52%, transparent) 100%
+    );
+  }
+}
+
 ::selection {
   background: var(--accent-muted);
   color: var(--text);
@@ -266,7 +333,8 @@ article[id] {
   .hero-in {
     animation: fade-in 150ms linear both;
   }
-  .hero-scene {
+  .hero-scene,
+  .album-field img {
     transition: none;
   }
   .card-hover,

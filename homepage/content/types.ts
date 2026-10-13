@@ -13,6 +13,7 @@ export type EvidenceId =
   | "PUB-CAPRO"
   | "PUB-AICL"
   | "CHL-MARS"
+  | "PUB-XPOLICYLAB"
   | "RES-MERA"
   | "COM-LUMINA";
 
@@ -136,7 +137,7 @@ export interface Project {
   outcome?: string;
   /** Badge next to the outcome. Omit when an individual role is stated. */
   resultScope?: "team" | "product";
-  /** Accent tag. Reserved for Best Paper, Best Poster, and Champion. */
+  /** Accent tag. Reserved for Best Paper, Best Tool Paper, Best Poster, and Champion. */
   highlight?: string;
   tools: ToolTag[];
   links: LinkRef[];

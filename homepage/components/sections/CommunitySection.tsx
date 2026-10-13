@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Community, SectionCopy } from "@/content/types";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -61,8 +62,8 @@ export function CommunitySection({ copy, community, organizer }: CommunitySectio
           )}
         </Reveal>
 
-        <Reveal index={1} className="col-span-4 sm:col-span-8 lg:col-span-5 lg:col-start-8">
-          <Card hover={false}>
+        <Reveal index={1} className="col-span-4 flex flex-col sm:col-span-8 lg:col-span-5 lg:col-start-8 lg:h-full">
+          <Card hover={false} className="shrink-0">
             {community.mark && (
               <div className="flex items-center gap-4 border-b border-line pb-6">
                 <Mark media={community.mark} className="h-14" />
@@ -81,6 +82,15 @@ export function CommunitySection({ copy, community, organizer }: CommunitySectio
               </div>
             </dl>
           </Card>
+          <figure className="relative mt-4 overflow-hidden rounded-2xl border border-line lg:min-h-0 lg:flex-1">
+            <Image
+              src="/figures/lumina-talk.jpg"
+              alt="Qiangyu Chen speaking for Lumina Embodied AI Community. The screen reads 从看到做到：具身智能开发者需要怎么样的生态."
+              width={1600}
+              height={1067}
+              className="h-auto w-full lg:absolute lg:inset-0 lg:h-full lg:object-cover lg:object-[center_32%]"
+            />
+          </figure>
         </Reveal>
       </div>
     </Section>

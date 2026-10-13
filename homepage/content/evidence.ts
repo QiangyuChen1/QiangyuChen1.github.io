@@ -22,6 +22,8 @@ export const evidence: Record<EvidenceId, string> = {
     "AICL: AAAI 2025 poster, second author; abstract, results, and Figure 4 from ojs.aaai.org/index.php/AAAI/article/view/33755",
   "CHL-MARS":
     "MARS 2025 Challenge on SpaVLE @ NeurIPS 2025, Control Track Champion (MMLab@HKU×D-Robotics; Qiangyu Chen listed). Certificate supplied by Qiangyu; track name confirmed in arXiv:2601.18733",
+  "PUB-XPOLICYLAB":
+    "XPolicyLab: Qiangyu stated this is their work (2026-10). arXiv:2608.09892 lists Qiangyu Chen among the authors; core lead authors named on github.com/XPolicyLab/XPolicyLab do not include them. Best Tool Paper, IROS 2026 workshop Building Scalable Infrastructure for Robot Learning: From Data Scaling to Real-World Deployment, awarded to all XPolicyLab contributors. Certificate supplied by Qiangyu. Project page xpolicylab.github.io",
   "RES-MERA": "Low-Rank MERA Image Fitting research project (CityU award 2026)",
   "COM-LUMINA": "Lead organizer (主理人), Lumina Embodied AI Community; logo and GitHub from github.com/Lumina-EAI",
 };

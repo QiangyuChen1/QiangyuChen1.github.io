@@ -15,12 +15,12 @@ export const sections = {
     eyebrow: "Work",
     title: "Work directions",
     intro:
-      "Three strands run through my work: the infrastructure physical robots run on, the vision that lets them perceive, and getting learned systems running on real hardware.",
+      "Three strands run through my work: infrastructure for robot learning, the vision that lets them perceive, and getting learned systems running on real hardware.",
   },
   projects: {
     eyebrow: "Projects",
     title: "Selected work",
-    intro: "Selected work across simulation, dexterous hardware, and perception.",
+    intro: "Selected work across infrastructure, simulation, dexterous hardware, and perception.",
   },
   experience: {
     eyebrow: "Experience",
@@ -38,7 +38,7 @@ export const sections = {
   },
   contact: {
     eyebrow: "Contact",
-    title: "Real-Robot Infra and Real-Robot Deployment.",
+    title: "Infra and Real-Robot Deployment.",
   },
 } satisfies Record<string, SectionCopy>;
 

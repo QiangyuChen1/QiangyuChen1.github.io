@@ -16,7 +16,7 @@ const publicDir = fileURLToPath(new URL("../public", import.meta.url));
 const knownEvidence = new Set(Object.keys(evidence));
 const projectIds = new Set(projects.map((p) => p.id));
 const restrictedTools = new Set(["RL", "VLA"]);
-const accentWorthy = /best paper|best poster|champion/i;
+const accentWorthy = /best tool paper|best paper|best poster|champion/i;
 const yearMonth = /^\d{4}\.(0[1-9]|1[0-2])$/;
 
 function checkEvidence(where: string, ids: string[]) {

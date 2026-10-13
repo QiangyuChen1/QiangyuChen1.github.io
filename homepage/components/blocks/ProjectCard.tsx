@@ -21,13 +21,13 @@ export function ProjectCard({ project, headingLevel = 3 }: ProjectCardProps) {
   const awards = project.awards ?? [];
 
   return (
-    <Card as="article" id={project.id} className="grid gap-6 md:grid-cols-12 md:items-center md:gap-8">
+    <Card as="article" id={project.id} className="grid gap-6 overflow-hidden md:grid-cols-12 md:items-start md:gap-8">
       {project.media && (
-        <div className="md:col-span-5">
+        <div className="min-w-0 self-start md:col-span-5">
           <MediaFrame media={project.media} />
         </div>
       )}
-      <div className={project.media ? "md:col-span-7" : "md:col-span-12"}>
+      <div className={project.media ? "min-w-0 md:col-span-7" : "md:col-span-12"}>
         <p className="text-label flex flex-wrap gap-x-3 gap-y-1 text-muted">
           {hasDate && <DateRangeText range={project.dates} />}
           {hasDate && <span aria-hidden="true">·</span>}

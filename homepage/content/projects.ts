@@ -8,9 +8,34 @@ import {
   marsCertificateCover,
   mmhandOverview,
   robotwinTeaser,
+  xpolicyLabCertificate,
+  xpolicyLabTeaser,
 } from "./figures.ts";
 
 export const projects: Project[] = [
+  {
+    id: "proj-xpolicylab",
+    title: "XPolicyLab",
+    context: "IROS 2026 · Building Scalable Infrastructure for Robot Learning Workshop",
+    category: "Infra · Policy",
+    dates: {},
+    status: "evidenced",
+    summary:
+      "A unified standard and open ecosystem for robot policy evaluation and deployment: one adapter per policy, one client per environment.",
+    outcome: "The same adapters serve RoboTwin, RoboDojo simulation, and real-robot evaluation.",
+    resultScope: "team",
+    highlight: "Best Tool Paper",
+    tools: ["Policy Evaluation"],
+    links: [
+      { kind: "github", label: "GitHub", href: "https://github.com/XPolicyLab/XPolicyLab" },
+      { kind: "site", label: "Project", href: "https://xpolicylab.github.io/" },
+      { kind: "paper", label: "arXiv", href: "https://arxiv.org/abs/2608.09892" },
+    ],
+    media: xpolicyLabTeaser,
+    awards: [xpolicyLabCertificate],
+    evidence: ["PUB-XPOLICYLAB"],
+    order: 1,
+  },
   {
     id: "proj-robotwin2",
     title: "RoboTwin 2.0",
@@ -31,7 +56,7 @@ export const projects: Project[] = [
     media: robotwinTeaser,
     awards: [irosCertificate, chinasiCertificate],
     evidence: ["PUB-ROBOTWIN2", "EXP-AGILEX"],
-    order: 1,
+    order: 2,
   },
   {
     id: "proj-mmhand",
