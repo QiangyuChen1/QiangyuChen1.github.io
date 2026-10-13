@@ -82,7 +82,7 @@ export const mmhandStructure: MediaRef = {
   alt: "MM-Hand structure: the palm PCB and quick tendon connector box on the back, and tactile sensors, angle sensors, and in-palm cameras on the front.",
   width: 900,
   height: 564,
-  credit: "Fig. 2 · MM-Hand 1.0",
+  credit: "MM-Hand 1.0",
   href: "https://arxiv.org/abs/2604.17245",
 };
 
@@ -91,7 +91,7 @@ export const g3flowSpatialAlignment: MediaRef = {
   alt: "G3Flow spatial alignment: an object's semantic point cloud is tracked from object to world coordinates until it lines up with the real object in the robot's gripper.",
   width: 575,
   height: 354,
-  credit: "Fig. 4 · G3Flow",
+  credit: "G3Flow",
   href: "https://arxiv.org/abs/2411.18369",
 };
 
@@ -101,7 +101,7 @@ export const robotwinRealWorld: MediaRef = {
   alt: "RoboTwin 2.0 real-world evaluation: a dual-arm robot and a bottle on seen and unseen table backgrounds, with and without clutter.",
   width: 966,
   height: 608,
-  credit: "Fig. 10 · RoboTwin 2.0",
+  credit: "RoboTwin 2.0",
   href: "https://arxiv.org/abs/2506.18088",
 };
 
