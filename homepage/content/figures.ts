@@ -78,29 +78,32 @@ export const mmhandOverview: MediaRef = {
 
 /** Fig. 2 of the paper without its right-hand degree-of-freedom diagram. */
 export const mmhandStructure: MediaRef = {
-  src: "/figures/mmhand-structure.jpg",
-  alt: "MM-Hand structure: the palm PCB and quick tendon connector box on the back, and tactile sensors, angle sensors, and in-palm cameras on the front.",
-  width: 900,
-  height: 564,
+  src: "/videos/mmhand.jpg",
+  video: "/videos/mmhand.mp4",
+  alt: "MM-Hand on a robot arm, with the remote motor box and tendon cables beside the base.",
+  width: 960,
+  height: 540,
   credit: "MM-Hand 1.0",
   href: "https://arxiv.org/abs/2604.17245",
 };
 
 export const g3flowSpatialAlignment: MediaRef = {
-  src: "/figures/g3flow-spatial-alignment.png",
-  alt: "G3Flow spatial alignment: an object's semantic point cloud is tracked from object to world coordinates until it lines up with the real object in the robot's gripper.",
-  width: 575,
-  height: 354,
+  src: "/videos/g3flow.jpg",
+  video: "/videos/g3flow.mp4",
+  alt: "G3Flow semantic point cloud of a shoe, colored by feature.",
+  width: 800,
+  height: 608,
   credit: "G3Flow",
   href: "https://arxiv.org/abs/2411.18369",
 };
 
 /** Fig. 10 of the paper with its four panels arranged 2×2 instead of in one row. */
 export const robotwinRealWorld: MediaRef = {
-  src: "/figures/robotwin-real-world.jpg",
-  alt: "RoboTwin 2.0 real-world evaluation: a dual-arm robot and a bottle on seen and unseen table backgrounds, with and without clutter.",
-  width: 966,
-  height: 608,
+  src: "/videos/robotwin.jpg",
+  video: "/videos/robotwin.mp4",
+  alt: "RoboTwin dual-arm tasks across five robot embodiments, with a second row for cross-embodiment control.",
+  width: 960,
+  height: 540,
   credit: "RoboTwin 2.0",
   href: "https://arxiv.org/abs/2506.18088",
 };

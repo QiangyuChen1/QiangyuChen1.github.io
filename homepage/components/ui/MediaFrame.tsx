@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { MediaRef } from "@/content/types";
 import { cn } from "@/lib/cn";
+import { LoopVideo } from "./LoopVideo";
 import { Mark } from "./Mark";
 
 interface MediaFrameProps {
@@ -22,6 +23,13 @@ export function MediaFrame({ media, ratio = "16 / 10", sizes = "(min-width: 768p
         <div className="absolute inset-0 flex items-center justify-center">
           <Mark media={media} className="h-20 max-w-[55%] lg:h-24" />
         </div>
+      ) : media.video ? (
+        <LoopVideo
+          src={media.video}
+          poster={media.src}
+          alt={media.alt}
+          className="card-media absolute inset-0 h-full w-full object-contain p-3 sm:p-4"
+        />
       ) : (
         <Image src={media.src} alt={media.alt} fill sizes={sizes} className="card-media object-contain p-3 sm:p-4" />
       )}

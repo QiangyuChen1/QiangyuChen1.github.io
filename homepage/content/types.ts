@@ -58,11 +58,13 @@ export interface LinkRef {
 }
 
 export interface MediaRef {
-  /** Path under public/. */
+  /** Path under public/. Poster still, when a video is set. */
   src: string;
   alt: string;
   width: number;
   height: number;
+  /** Short muted loop under public/. Played in place of the still. */
+  video?: string;
   /** Where the image comes from. Shown under standalone figures. */
   credit?: string;
   /** Page the image was taken from, or the local original it previews (e.g. a certificate PDF). */
@@ -123,12 +125,16 @@ export interface WorkDirection {
   order: number;
 }
 
+/** Publication groups, in the same order used on tianxingchen.github.io. Empty groups are not rendered. */
+export type ProjectGroupId = "evaluation" | "fast-brain" | "computer-vision" | "infra" | "more";
+
 export interface Project {
   id: string;
   title: string;
   /** Venue, role, or organization line under the title. */
   context: string;
   category: string;
+  group: ProjectGroupId;
   dates: DateRange;
   status: Status;
   /** One sentence. */

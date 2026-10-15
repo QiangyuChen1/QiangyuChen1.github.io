@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import { evidence } from "../content/evidence.ts";
 import { profile } from "../content/profile.ts";
 import { workDirections } from "../content/work.ts";
-import { projects } from "../content/projects.ts";
+import { projectGroups, projects } from "../content/projects.ts";
 import { timeline } from "../content/engineering.ts";
 import { community } from "../content/community.ts";
 import type { DateRange, MediaRef } from "../content/types.ts";
@@ -15,6 +15,7 @@ const fail = (msg: string) => errors.push(msg);
 const publicDir = fileURLToPath(new URL("../public", import.meta.url));
 const knownEvidence = new Set(Object.keys(evidence));
 const projectIds = new Set(projects.map((p) => p.id));
+const projectGroupIds = new Set(projectGroups.map((g) => g.id));
 const restrictedTools = new Set(["RL", "VLA"]);
 const accentWorthy = /best tool paper|best paper|best poster|champion/i;
 const yearMonth = /^\d{4}\.(0[1-9]|1[0-2])$/;
@@ -42,6 +43,7 @@ function checkLocalFile(where: string, path: string) {
 function checkMedia(where: string, media: MediaRef | undefined) {
   if (!media) return;
   checkLocalFile(where, media.src);
+  if (media.video) checkLocalFile(`${where} video`, media.video);
   if (!media.alt.trim()) fail(`${where}: image needs alt text`);
   if (media.href && !media.href.startsWith("https://")) checkLocalFile(`${where} (href)`, media.href);
 }
@@ -64,6 +66,7 @@ for (const d of workDirections) {
 
 for (const p of projects) {
   const where = `projects/${p.id}`;
+  if (!projectGroupIds.has(p.group)) fail(`${where}: unknown group "${p.group}"`);
   checkEvidence(where, p.evidence);
   checkLinks(where, p.links);
   checkDates(where, p.dates);

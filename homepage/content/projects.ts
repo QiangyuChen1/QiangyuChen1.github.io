@@ -1,4 +1,13 @@
-import type { Project } from "./types.ts";
+import type { Project, ProjectGroupId } from "./types.ts";
+
+/** Group order follows tianxingchen.github.io. Computer Vision is the perception work that does not sit in Fast Brain. Empty groups are omitted. */
+export const projectGroups: { id: ProjectGroupId; title: string; meta?: string }[] = [
+  { id: "evaluation", title: "Evaluation", meta: "Iterate" },
+  { id: "fast-brain", title: "Fast Brain", meta: "Manipulation" },
+  { id: "computer-vision", title: "Computer Vision" },
+  { id: "infra", title: "Infra", meta: "Foundation" },
+  { id: "more", title: "More" },
+];
 import {
   aiclReliability,
   caproIntro,
@@ -18,6 +27,7 @@ export const projects: Project[] = [
     title: "XPolicyLab",
     context: "IROS 2026 · Building Scalable Infrastructure for Robot Learning Workshop",
     category: "Infra · Policy",
+    group: "infra",
     dates: {},
     status: "evidenced",
     summary:
@@ -41,6 +51,7 @@ export const projects: Project[] = [
     title: "RoboTwin 2.0",
     context: "ICML 2026",
     category: "Simulation · Bimanual",
+    group: "evaluation",
     dates: { start: "2025.04", end: "2025.07" },
     status: "evidenced",
     summary:
@@ -63,6 +74,7 @@ export const projects: Project[] = [
     title: "MM-Hand 1.0",
     context: "Design Consultant · Shenzhen Hetao Institute × HKU MMLab",
     category: "Hardware · Mechanism",
+    group: "infra",
     dates: { start: "2025.08", end: "2026.05" },
     status: "evidenced",
     summary:
@@ -79,6 +91,7 @@ export const projects: Project[] = [
     title: "G3Flow",
     context: "CVPR 2025",
     category: "Perception · Manipulation",
+    group: "fast-brain",
     dates: { start: "2024.08", end: "2024.11" },
     status: "evidenced",
     summary:
@@ -97,6 +110,7 @@ export const projects: Project[] = [
     title: "MARS 2025 Challenge (SpaVLE), Control Track",
     context: "NeurIPS 2025 · Simulation data and policy tuning",
     category: "Simulation · Policy",
+    group: "more",
     dates: { start: "2025.09", end: "2025.11" },
     status: "evidenced",
     summary:
@@ -117,6 +131,7 @@ export const projects: Project[] = [
     title: "CaPro",
     context: "AAAI 2026 · Poster · Co-first author",
     category: "Perception · Segmentation",
+    group: "computer-vision",
     dates: { start: "2024.07", end: "2025.03" },
     status: "evidenced",
     summary:
@@ -136,6 +151,7 @@ export const projects: Project[] = [
     title: "Attack-inspired Calibration Loss",
     context: "AAAI 2025 · Poster · Second author",
     category: "Perception · Recognition",
+    group: "computer-vision",
     dates: {},
     status: "evidenced",
     summary:
