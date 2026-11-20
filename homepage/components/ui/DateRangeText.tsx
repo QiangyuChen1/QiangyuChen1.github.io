@@ -6,7 +6,7 @@ export function DateRangeText({ range, className }: { range: DateRange; classNam
   const text = formatDateRange(range);
   if (!text) return null;
   return (
-    <time dateTime={toDateTime(range.start)} className={cn("tabular-nums", className)}>
+    <time dateTime={toDateTime(range.start ?? (range.end !== "present" ? range.end : undefined))} className={cn("tabular-nums", className)}>
       {text}
     </time>
   );

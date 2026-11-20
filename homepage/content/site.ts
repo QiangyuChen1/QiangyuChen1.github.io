@@ -44,5 +44,5 @@ export const sections = {
 
 export const footer = {
   place: "Hong Kong / Shenzhen",
-  updated: "2026-09",
+  updated: "2026-11",
 };

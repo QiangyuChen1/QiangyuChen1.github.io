@@ -8,8 +8,7 @@ export const profile: Profile = {
   eyebrow: "Embodied AI · Robot Learning · Manipulation",
   statement:
     "I build intelligent robotic systems through robot learning, simulation, perception, and control, from dexterous hands on the bench to scalable simulated data for bimanual manipulation.",
-  affiliationLine: "Xspark AI, Shenzhen · M.Sc. Data Science, City University of Hong Kong",
-  worksFor: { name: "Xspark AI", url: "https://github.com/XsparkAI" },
+  affiliationLine: "M.Sc. Data Science, City University of Hong Kong",
   signals: [
     {
       work: "RoboTwin 2.0",

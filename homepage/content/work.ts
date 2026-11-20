@@ -17,7 +17,7 @@ export const workDirections: WorkDirection[] = [
     id: "computer-vision",
     title: "Computer Vision",
     summary:
-      "Perception for robots and for inspection: X-Dec at Xspark AI today; before that, a 3D semantic flow that keeps object features aligned with the real scene during manipulation, the Segment Anything Model adapted to thin structures from a single image, and calibrated crack recognition.",
+      "Perception for robots and for inspection: X-Dec, the perception algorithm for an AgiBot retail warehouse at Xspark AI, and before that a 3D semantic flow that keeps object features aligned with the real scene during manipulation, the Segment Anything Model adapted to thin structures from a single image, and calibrated crack recognition.",
     media: g3flowSpatialAlignment,
     relatedProjects: ["proj-g3flow", "proj-capro"],
     signals: ["X-Dec", "CVPR 2025"],
@@ -28,7 +28,7 @@ export const workDirections: WorkDirection[] = [
     id: "real-robot-deployment",
     title: "Real-Robot Deployment",
     summary:
-      "Getting systems working on physical robots: real-robot delivery at Xspark AI today, and before that RoboTwin 2.0, whose synthetic data was evaluated on a real dual-arm robot against unseen backgrounds and clutter.",
+      "Getting systems working on physical robots: the early demo of an AgiBot retail-warehouse project worth tens of millions of yuan at Xspark AI, and before that RoboTwin 2.0, whose synthetic data was evaluated on a real dual-arm robot against unseen backgrounds and clutter.",
     media: robotwinRealWorld,
     relatedProjects: ["proj-robotwin2"],
     signals: ["Xspark AI", "ICML 2026"],

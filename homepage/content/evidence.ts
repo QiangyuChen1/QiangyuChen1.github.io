@@ -5,10 +5,11 @@ export const evidence: Record<EvidenceId, string> = {
   "EDU-SZU": "Shenzhen University, B.Eng. Computer Science and Technology, 2021.09 – 2025.06",
   "EDU-SZU-AWD":
     "Silver prize, preliminary round, National Algorithm Elite Contest; Top Talent Innovation Award; Outstanding Student Cadre",
-  "EDU-CITYU": "City University of Hong Kong, M.Sc. Data Science (in progress); coursework incl. Dynamic Programming & RL, Embodied AI & Applications",
+  "EDU-CITYU":
+    "Supplied by Qiangyu (2026-11): City University of Hong Kong, M.Sc. Data Science, graduated 2026.06. Coursework incl. Dynamic Programming & RL, Embodied AI & Applications",
   "EDU-CITYU-AWD": "Outstanding Research Project Award 2026 (Low-Rank MERA Image Fitting)",
   "EXP-XSPARK":
-    "Supplied by Qiangyu (2026-09): Xspark AI (深圳无界智航), 真机交付与事业部, 2026.06 – present; main outcome X-Dec, a computer vision project. Company description from github.com/XsparkAI",
+    "Supplied by Qiangyu (2026-11): Xspark AI (深圳无界智航), 真机交付与事业部, 2026.06 – 2026.11.15. Completed the early demo delivery (前期 demo 交付) of a project worth tens of millions of yuan (千万级). X-Dec is the perception algorithm for the AgiBot retail-warehouse project (智元零售仓项目). Company description from github.com/XsparkAI",
   "EXP-XJGN": "Stella-Robot (深圳星际光年科技有限公司), R&D Intern, 2024.09 – 2025.01 (dexterous hand control)",
   "EXP-MMHAND": "Shenzhen Hetao Institute × HKU MMLab, Design Consultant, 2025.08 – 2026.05 (MM-Hand 1.0)",
   "EXP-PARAMI": "Parami AI (HK), Development Intern & TA, 2025.09 – 2026.04 (LeRobot course technical lead)",

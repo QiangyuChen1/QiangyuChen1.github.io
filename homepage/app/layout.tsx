@@ -63,8 +63,10 @@ const personJsonLd = {
   email: profile.contact.email,
   jobTitle: profile.role,
   url: profile.seo.canonical,
-  affiliation: { "@type": "CollegeOrUniversity", name: "City University of Hong Kong" },
-  alumniOf: { "@type": "CollegeOrUniversity", name: "Shenzhen University" },
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "City University of Hong Kong" },
+    { "@type": "CollegeOrUniversity", name: "Shenzhen University" },
+  ],
   ...(profile.worksFor && { worksFor: { "@type": "Organization", ...profile.worksFor } }),
   knowsAbout: profile.interests,
 };
